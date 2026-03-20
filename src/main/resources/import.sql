@@ -16,8 +16,8 @@ INSERT INTO tb_event(name, date, url, city_id) VALUES ('Congresso Linux', '2021-
 INSERT INTO tb_event(name, date, url, city_id) VALUES ('Semana Spring React', '2021-05-03', 'https://devsuperior.com.br', 3);
 
 -- USER
-INSERT INTO tb_user (name, email, password) VALUES ('Admin', 'admin@gmail.com', '$2a$10$mtRa5ZGFDYy7nwg6qQRL/eg8ZR1/HuC8KdDlMWm/mDllOrAKZ1Pfy');
-INSERT INTO tb_user (name, email, password) VALUES ('Ana Paula', 'ana.paula@gmail.com', '$2a$10$mtRa5ZGFDYy7nwg6qQRL/eg8ZR1/HuC8KdDlMWm/mDllOrAKZ1Pfy');
+INSERT INTO tb_user (name, email, password) VALUES ('Admin', 'bob@gmail.com', '$2a$10$mtRa5ZGFDYy7nwg6qQRL/eg8ZR1/HuC8KdDlMWm/mDllOrAKZ1Pfy');
+INSERT INTO tb_user (name, email, password) VALUES ('Ana Paula', 'ana@gmail.com', '$2a$10$mtRa5ZGFDYy7nwg6qQRL/eg8ZR1/HuC8KdDlMWm/mDllOrAKZ1Pfy');
 
 -- ROLES
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');

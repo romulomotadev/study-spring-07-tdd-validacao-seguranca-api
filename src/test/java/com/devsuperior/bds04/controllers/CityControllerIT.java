@@ -48,6 +48,7 @@ public class CityControllerIT {
 		clientPassword = "123456";
 		adminUsername = "bob@gmail.com";
 		adminPassword = "123456";
+
 		clientToken = tokenUtil.obtainAccessToken(mockMvc, clientUsername, clientPassword);
 		adminToken = tokenUtil.obtainAccessToken(mockMvc, adminUsername, adminPassword);
 		invalidToken = adminToken + "xpto"; // Simulates a wrong token
@@ -126,7 +127,8 @@ public class CityControllerIT {
 		
 		ResultActions result =
 				mockMvc.perform(get("/cities")
-					.contentType(MediaType.APPLICATION_JSON));
+						.header("Authorization", "Bearer " + clientToken)
+						.contentType(MediaType.APPLICATION_JSON));
 
 		result.andExpect(status().isOk());
 		result.andExpect(jsonPath("$[0].name").value("Belo Horizonte"));
