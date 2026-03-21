@@ -102,8 +102,6 @@ public class User implements UserDetails {
     }
 
 
-
-
     //===== GETTY | SETTER =======
 
     public String getEmail() {
