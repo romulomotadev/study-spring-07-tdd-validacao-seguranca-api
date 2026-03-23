@@ -42,6 +42,8 @@ public class EventControllerIT {
 	private String clientToken;
 	private String adminToken;
 	private String invalidToken;
+
+	private EventDTO dto;
 	
 	@BeforeEach
 	void setUp() throws Exception {
@@ -54,6 +56,7 @@ public class EventControllerIT {
 		clientToken = tokenUtil.obtainAccessToken(mockMvc, clientUsername, clientPassword);
 		adminToken = tokenUtil.obtainAccessToken(mockMvc, adminUsername, adminPassword);
 		invalidToken = adminToken + "xpto"; // Simulates a wrong token
+
 	}
 
 	@Test
@@ -82,7 +85,7 @@ public class EventControllerIT {
 		
 		ResultActions result =
 				mockMvc.perform(post("/events")
-					.header("Authorization", "Bearer " + clientToken)
+					.header("Authorization", "Bearer " + adminToken)
 					.content(jsonBody)
 					.contentType(MediaType.APPLICATION_JSON)
 					.accept(MediaType.APPLICATION_JSON));
