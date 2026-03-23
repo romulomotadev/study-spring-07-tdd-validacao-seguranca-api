@@ -27,4 +27,15 @@ public class CityService {
         return cities.stream().map(CityDTO::new).toList();
     }
 
+
+    //====== POST ========
+
+    @Transactional
+    public CityDTO insert(CityDTO cityDTO) {
+        City city = new City();
+        city.setName(cityDTO.getName());
+        city = repository.save(city);
+        return new CityDTO(city);
+    }
+
 }

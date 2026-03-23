@@ -1,0 +1,26 @@
+package com.devsuperior.bds04.dto.error;
+
+public class FieldMessageDto {
+
+    //ATRIBUTOS
+    private String fieldName;
+    private String message;
+
+    //CONSTRUTORES
+    public FieldMessageDto() {
+    }
+
+    public FieldMessageDto(String fieldName, String message) {
+        this.fieldName = fieldName;
+        this.message = message;
+    }
+
+    //GETTER
+    public String getFieldName() {
+        return fieldName;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+}

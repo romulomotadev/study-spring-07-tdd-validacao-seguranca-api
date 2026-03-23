@@ -9,20 +9,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
-public class Bds04Application implements CommandLineRunner {
+public class Bds04Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Bds04Application.class, args);
 	}
 
-	@Autowired
-	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-	@Override
-	public void run(String... args) throws Exception {
-
-		String securityConfig = passwordEncoder.encode("123456");
-		System.out.println(securityConfig);
-
-	}
 }
